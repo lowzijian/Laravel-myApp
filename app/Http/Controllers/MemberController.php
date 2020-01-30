@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Member;
 use App\Group;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MemberController extends Controller
 {
@@ -128,6 +129,10 @@ class MemberController extends Controller
      */
     public function destroy($id)
     {
-        //
+		$member = Member::find($id);
+        $member->delete(); 
+        return redirect()->route('member.index')
+                        ->with('success','Member deleted successfully');
+
     }
 }

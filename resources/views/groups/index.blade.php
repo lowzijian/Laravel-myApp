@@ -8,7 +8,7 @@
 @section('content')
 <!-- Bootstrap Boilerplate... -->
 <div class="panel-body">
-@if (count($divisions) > 0)
+@if (count($groups) > 0)
 <table class="table table-striped task-table">
 <!-- Table Headings -->
 <thead>
@@ -16,8 +16,7 @@
 <th>No.</th>
 <th>Code</th>
 <th>Name</th>
-<th>City</th>
-<th>State</th>
+<th>Description</th>
 <th>Created</th>
 <th>Actions</th>
 </tr>
@@ -25,7 +24,7 @@
 
 <!-- Table Body -->
 <tbody>
-@foreach ($divisions as $i => $division)
+@foreach ($groups as $i => $group)
 <tr>
 <td class="table-text">
 <div>{{ $i+1 }}</div>
@@ -33,44 +32,41 @@
 <td class="table-text">
 <div>
 {!! link_to_route(
-'division.show',
-$title = $division->code,
+'group.show',
+$title = $group->code,
 $parameters = [
-'id' => $division->id,
+'id' => $group->id,
 ]
 ) !!}
 </div>
 </td>
 <td class="table-text">
-<div>{{ $division->name }}</div>
+<div>{{ $group->name }}</div>
 </td>
 <td class="table-text">
-<div>{{ $division->city }}</div>
+<div>{{ $group->description }}</div>
 </td>
 <td class="table-text">
-<div>{{ Common::$states[$division->state] }}</div>
-</td>
-<td class="table-text">
-<div>{{ $division->created_at }}</div>
+<div>{{ $group->created_at }}</div>
 </td>
 <td class="table-text">
 <div>
 {!! link_to_route(
-'division.edit',
+'group.edit',
 $title = 'Edit',
 $parameters = [
-'id' => $division->id,
+'id' => $group->id,
 ]
 ) !!}
-|
-<!--{!!
- Form::open(['method' => 'DELETE', 'route' => ['division.destroy', $division->id]]) 
+<!--
+{!!
+ Form::open(['method' => 'DELETE', 'route' => ['group.destroy', $group->id]]) 
 !!}
 {!!
 	Form::submit('Delete')
 !!}
 -->
-<a href="{{ route('division.delete', $division->id) }}">Delete</a>
+<a href="{{ route('group.delete', $group->id) }}">Delete</a>
 </div>
 </td>
 </tr>

@@ -86,6 +86,15 @@ $parameters = [
 'id' => $member->id,
 ]
 ) !!}
+<!--
+{!!
+ Form::open(['method' => 'DELETE', 'route' => ['member.destroy', $member->id]]) 
+!!}
+{!!
+	Form::submit('Delete')
+!!}
+-->
+<a href="{{ route('member.delete', $member->id) }}">Delete</a>
 </div>
 </td>
 </tr>

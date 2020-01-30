@@ -18,7 +18,7 @@ Route::get('/', function () {
 /*Route::resources([
 	'/division' => 'DivisionController',
 	'/member' => 'MemberController',
-	
+	'/group' => 'GroupController',
 ]);
 */
 
@@ -34,7 +34,10 @@ Route::get('/division/{id}/edit',
 Route::put('/division/{id}',
 'DivisionController@update')->name('division.update');
 */
-Route::resource('/division', 'DivisionController', ['except' => ['destroy',]]);
+//Route::resource('/division', 'DivisionController', ['except' => ['destroy',]]);
+Route::resource('/division', 'DivisionController');
+Route::get('division/delete/{division}',['as' => 'division.delete', 'uses' => 'DivisionController@destroy']);
+
 
 //Member
 /*
@@ -49,6 +52,12 @@ Route::get('/member/{id}/edit',
 Route::put('/member/{id}',
 'MemberController@update')->name('member.update');
 */
-Route::resource('/member', 'MemberController', ['except' => ['destroy',]]);
+//Route::resource('/member', 'MemberController', ['except' => ['destroy',]]);
+Route::resource('/member', 'MemberController');
+Route::get('member/delete/{member}',['as' => 'member.delete', 'uses' => 'MemberController@destroy']);
 
 
+//Group
+Route::resource('/group', 'GroupController');
+//Route::resource('/group', 'GroupController', ['except' => ['destroy',]]);
+Route::get('group/delete/{group}',['as' => 'group.delete', 'uses' => 'GroupController@destroy']);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Division;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class DivisionController extends Controller
 {
@@ -67,4 +68,14 @@ class DivisionController extends Controller
 
 		return redirect()->route('division.index');
 	}
+	
+	public function destroy($id)
+    {
+		$division = Division::find($id);
+        $division->delete(); 
+        return redirect()->route('division.index')
+                        ->with('success','Division deleted successfully');
+
+    }
+
 }
