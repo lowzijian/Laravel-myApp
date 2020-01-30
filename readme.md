@@ -10,7 +10,7 @@ run `npm install`
 3. **Create copy of ur .env file** <br>
 `cp .env.example .env`
 
-4.**Generate an app encryption key** <br>
+4. **Generate an app encryption key** <br>
 `php artisan key:generate`
 
 5. **Create an empty database for our application** <br>
