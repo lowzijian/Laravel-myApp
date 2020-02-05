@@ -11,7 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </head>
-<header style="height:25px;padding:5px">
+<header style="padding:15px;">
     <nav class="col-md-12">
         <a class="col-md-4" href="/member">Member</a>
         <a class="col-md-4" href="/division">Division</a>
