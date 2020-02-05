@@ -9,7 +9,7 @@ use App\Common;
 
 <!-- Bootstrap Boilerplate... -->
 
-<div class="panel-body">
+<div class="panel-body col-sm-12">
 <!-- Edit Group Form -->
 {!! Form::model($group, [
 'route' => ['group.update', $group->id],
