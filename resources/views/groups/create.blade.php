@@ -7,7 +7,7 @@ use App\Common;
 
 <!-- Bootstrap Boilerplate... -->
 
-<div class="panel-body">
+<div class="panel-body col-sm-12">
 <!-- New Group Form -->
 {!! Form::model($group, [
 'route' => ['group.store'],

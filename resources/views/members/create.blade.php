@@ -8,7 +8,7 @@ use App\Division;
 
 <!-- Bootstrap Boilerplate... -->
 
-<div class="panel-body">
+<div class="panel-body col-sm-12">
 <!-- New Member Form -->
 {!! Form::model($member, [
 'route' => ['member.store'],

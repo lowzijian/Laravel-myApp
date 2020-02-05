@@ -7,7 +7,7 @@ use App\Common;
 
 <!-- Bootstrap Boilerplate... -->
 
-<div class="panel-body">
+<div class="panel-body col-sm-12">
 <!-- New Division Form -->
 {!! Form::model($division, [
 'route' => ['division.store'],
