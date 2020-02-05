@@ -75,9 +75,6 @@ $parameters = [
 <div>{{ Division::pluck('name','id')[$member->division_id] }}</div>
 </td>
 <td class="table-text">
-<div></div>
-</td>
-<td class="table-text">
 <div>
 {!! link_to_route(
 'member.edit',
@@ -94,6 +91,7 @@ $parameters = [
 	Form::submit('Delete')
 !!}
 -->
+|
 <a href="{{ route('member.delete', $member->id) }}">Delete</a>
 </div>
 </td>

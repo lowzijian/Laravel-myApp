@@ -66,6 +66,7 @@ $parameters = [
 	Form::submit('Delete')
 !!}
 -->
+|
 <a href="{{ route('group.delete', $group->id) }}">Delete</a>
 </div>
 </td>
